@@ -19,12 +19,13 @@ export default class App extends Component {
     }
 
     addItem(text) {
-        this.setState = {
+        this.setState( {
             items: [
-                ...items,
-                {text}
+                ...this.state.items,
+                {text: text}
             ]
-        }
+        } );
+        console.log(this.state.items);
     }
 
     render() {

@@ -14,7 +14,8 @@ export default class Input extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.handleNewItem(event.target.value);
+        this.props.handleNewItem(this.state.inputValue);
+        this.setState({inputValue: ''});
     }
 
     handleOnChange(text) {
@@ -25,7 +26,7 @@ export default class Input extends Component {
     render() {
         return(
             <div>
-                <form onSubmit={event => this.handleSubmit(event.target.value)}>
+                <form onSubmit={event => this.handleSubmit(event)}>
                     <input 
                         onChange={event => this.handleOnChange(event.target.value)} 
                         value={this.state.inputValue} 
